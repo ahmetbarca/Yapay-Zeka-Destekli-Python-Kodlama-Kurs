@@ -1,0 +1,7 @@
+Python'da Çıkarma İşlemi Örneği:
+
+sayi1 = 10
+sayi2 = 4
+sonuc = sayi1 - sayi2
+
+print("Sonuç:", sonuc)

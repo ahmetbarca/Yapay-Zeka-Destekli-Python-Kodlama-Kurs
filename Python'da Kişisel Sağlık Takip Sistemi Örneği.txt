@@ -1,0 +1,57 @@
+# Kullanıcıdan bilgileri alıyoruz
+boy_cm = float(input("Boyunuzu cm cinsinden girin: "))
+kilo = float(input("Kilonuzu kg cinsinden girin: "))
+yas = int(input("Yaşınızı girin: "))
+cinsiyet = input("Cinsiyetinizi girin (Erkek/Kadın): ").lower()
+egzersiz_aliskanligi = input("Egzersiz alışkanlıklarınızı girin (Sedanter, Hafif, Orta, Ağırsız, Çok Ağırsız): ").lower()
+
+# Boyu metreye çeviriyoruz
+boy_m = boy_cm / 100
+
+# Vücut Kütle Endeksi (BMI) hesaplama
+bmi = kilo / (boy_m ** 2)
+
+# Günlük Kalori İhtiyacı (TDEE) hesaplama - Harris-Benedict Denklemi
+if cinsiyet == "erkek":
+    bmr = 88.362 + (13.397 * kilo) + (4.799 * boy_m * 100) - (5.677 * yas)
+else:
+    bmr = 447.593 + (9.247 * kilo) + (3.098 * boy_m * 100) - (4.330 * yas)
+
+# Aktivite düzeyine göre kalori ihtiyacı
+if egzersiz_aliskanligi == "sedanter":
+    tdee = bmr * 1.2
+elif egzersiz_aliskanligi == "hafif":
+    tdee = bmr * 1.375
+elif egzersiz_aliskanligi == "orta":
+    tdee = bmr * 1.55
+elif egzersiz_aliskanligi == "ağırsız":
+    tdee = bmr * 1.725
+else:
+    tdee = bmr * 1.9
+
+# İdeal kilo aralığı hesaplama (BMI 18.5-24.9 arası ideal)
+ideal_kilo_min = 18.5 * (boy_m ** 2)
+ideal_kilo_max = 24.9 * (boy_m ** 2)
+
+# Sağlık önerileri
+if bmi < 18.5:
+    bmi_kategori = "Zayıf"
+    oneri = "Kilo almanız gerekebilir. Daha fazla kalori almayı deneyin."
+elif 18.5 <= bmi < 24.9:
+    bmi_kategori = "Normal"
+    oneri = "Kilonuz normal. Sağlıklı yaşam tarzını sürdürün!"
+elif 25 <= bmi < 29.9:
+    bmi_kategori = "Kilolu"
+    oneri = "Kilo vermeniz gerekebilir. Dengeli bir diyet ve egzersiz önerilir."
+else:
+    bmi_kategori = "Obez"
+    oneri = "Kilo vermeniz çok önemli. Bir doktora danışarak bir program oluşturun."
+
+# Sonuçları ekrana yazdırıyoruz
+print("\n--- Sağlık Analizi ---")
+print(f"Boy: {boy_cm} cm, Kilo: {kilo} kg, Yaş: {yas}, Cinsiyet: {cinsiyet.capitalize()}")
+print(f"Vücut Kütle Endeksiniz (BMI): {bmi:.2f}")
+print(f"BMI Kategoriniz: {bmi_kategori}")
+print(f"İdeal Kilo Aralığınız: {ideal_kilo_min:.2f} kg - {ideal_kilo_max:.2f} kg")
+print(f"Günlük Kalori İhtiyacınız: {tdee:.2f} kalori")
+print(f"Sağlık Önerisi: {oneri}")

@@ -1,0 +1,8 @@
+x = 5
+y = 3
+
+# x 5'e eşit veya y 10'a eşit mi?
+if x == 5 or y == 10:
+    print("Bir koşul doğru.")
+else:
+    print("İki koşul da yanlış.")

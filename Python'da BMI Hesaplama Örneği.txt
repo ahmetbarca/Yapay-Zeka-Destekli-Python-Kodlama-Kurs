@@ -1,0 +1,25 @@
+# Kullanıcıdan bilgileri alıyoruz
+boy_cm = float(input("Boyunuzu cm cinsinden girin: "))
+kilo = float(input("Kilonuzu kg cinsinden girin: "))
+yas = int(input("Yaşınızı girin: "))
+
+# Boyu metreye çeviriyoruz
+boy_m = boy_cm / 100
+
+# Kütle endeksini hesaplıyoruz
+bmi = kilo / (boy_m ** 2)
+
+# BMI kategorisini belirliyoruz
+if bmi < 18.5:
+    kategori = "Zayıf"
+elif 18.5 <= bmi < 24.9:
+    kategori = "Normal"
+elif 25 <= bmi < 29.9:
+    kategori = "Kilolu"
+else:
+    kategori = "Obez"
+
+# Sonuçları ekrana yazdırıyoruz
+print(f"\nBoy: {boy_cm} cm, Kilo: {kilo} kg, Yaş: {yas}")
+print(f"Kütle Endeksiniz: {bmi:.2f}")
+print(f"BMI Kategoriniz: {kategori}")

@@ -1,0 +1,8 @@
+x = 5
+y = 10
+
+# Hem x 5'e eşit, hem de y 10'a eşit mi?
+if x == 5 and y == 10:
+    print("Hem x 5'e eşit hem de y 10'a eşittir.")
+else:
+    print("Koşullardan biri doğru değil.")

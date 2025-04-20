@@ -1,0 +1,7 @@
+x = 5
+
+# x 5'e eşit değil mi?
+if not x == 10:
+    print("x 10'a eşit değil.")
+else:
+    print("x 10'a eşittir.")

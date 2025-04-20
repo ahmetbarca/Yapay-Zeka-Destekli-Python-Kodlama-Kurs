@@ -1,0 +1,7 @@
+Python'da Toplama İşemi Örneği:
+
+sayi1 = 5
+sayi2 = 7
+toplam = sayi1 + sayi2
+
+print("Toplam:", toplam)

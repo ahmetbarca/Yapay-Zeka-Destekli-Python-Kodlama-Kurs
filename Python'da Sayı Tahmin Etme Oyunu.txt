@@ -1,0 +1,25 @@
+import random
+
+# 1 ile 20 arasında rastgele bir sayı seç
+dogru_sayi = random.randint(1, 20)
+
+# Tahmin hakkı
+hak = 5
+
+print("1 ile 20 arasında bir sayı tuttum. Hadi tahmin et!")
+
+for i in range(hak):
+    tahmin = int(input(f"{i+1}. tahminin: "))
+    
+    if tahmin == dogru_sayi:
+        print("Helal olsun be Örümcek adam! 🎉")
+        break
+    else:
+        if i == hak - 1:
+            print("Ezik, bilemedin ki 😎")
+        else:
+            print("Bilemedin, hadi bir daha dene.")
+            if tahmin < dogru_sayi:
+                print("Biraz daha yukarı çık ⬆️")
+            else:
+                print("Biraz daha aşağı in ⬇️")

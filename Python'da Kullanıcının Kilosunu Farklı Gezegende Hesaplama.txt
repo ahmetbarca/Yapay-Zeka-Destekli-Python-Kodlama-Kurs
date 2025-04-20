@@ -1,0 +1,15 @@
+# Kullanıcıdan kilo alınıyor
+kilo = float(input("Kilonuzu kilogram cinsinden girin: "))
+
+# Yerçekimi oranları (Dünya = 1)
+yercekimi_oranlari = {
+    "Merkür": 0.38,
+    "Venüs": 0.91,
+    "Mars": 0.38,
+    "Jüpiter": 2.34
+}
+
+print("\nFarklı gezegenlerdeki ağırlığınız:")
+for gezegen, oran in yercekimi_oranlari.items():
+    agirlik = kilo * oran
+    print(f"{gezegen}: {agirlik:.2f} kg")

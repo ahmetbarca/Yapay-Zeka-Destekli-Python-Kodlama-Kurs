@@ -1,0 +1,5 @@
+sayi1 = 12
+sayi2 = 4
+bolum = sayi1 / sayi2
+
+print("Bölüm:", bolum)

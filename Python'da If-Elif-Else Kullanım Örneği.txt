@@ -1,0 +1,20 @@
+# Şifre belirleniyor
+sifre = input("Lütfen bir şifre belirleyin: ")
+
+print("\nŞifreniz kaydedildi. Şimdi tekrar girmeniz gerekiyor.")
+
+# Kullanıcının toplam 3 hakkı var
+hak = 3
+
+while hak > 0:
+    tahmin = input("Şifrenizi girin: ")
+
+    if tahmin == sifre:
+        print("Tebrik Ederim, Başarılı Şifre 🎉")
+        break
+    elif hak > 1:
+        hak -= 1
+        print(f"Yanlış Şifre, Bir Daha Dener Misin? Kalan Hakkınız: {hak}")
+    else:
+        print("Üzgünüm, 3 hakkınız da bitti. Erişim reddedildi ❌")
+        break

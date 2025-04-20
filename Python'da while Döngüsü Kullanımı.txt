@@ -1,0 +1,9 @@
+dogru_sifre = "1234"
+sifre = ""
+
+while sifre != dogru_sifre:
+    sifre = input("Şifrenizi girin: ")
+    if sifre != dogru_sifre:
+        print("Yanlış şifre, tekrar deneyin!")
+
+print("Şifre doğru! Hoş geldiniz.")

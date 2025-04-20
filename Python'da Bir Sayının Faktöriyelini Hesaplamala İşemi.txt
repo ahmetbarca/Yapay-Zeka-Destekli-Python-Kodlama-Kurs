@@ -1,0 +1,12 @@
+# Kullanıcıdan faktöriyelini hesaplamak istediği sayıyı alıyoruz
+sayi = int(input("Faktöriyelini hesaplamak istediğiniz sayıyı girin: "))
+
+# Faktöriyel hesabı için başlangıç değeri
+faktoriyel = 1
+
+# For döngüsü ile faktöriyel hesaplama
+for i in range(1, sayi + 1):
+    faktoriyel *= i  # faktoriyel = faktoriyel * i
+
+# Sonucu ekrana yazdırıyoruz
+print(f"{sayi} sayısının faktöriyel değeri: {faktoriyel}")
